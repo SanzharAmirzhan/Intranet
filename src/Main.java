@@ -17,6 +17,8 @@ public class Main {
         if(auth == null){
             cout("You should create account\nChoose :\n1 - Teacher\n2 - Student");
             cout("3 - OR ENTER AS ADMIN:");
+            cout("4 - OR ENTER AS TEACHER");
+            cout("5 - OR ENTER AS STUDENT");
             int type = cin.nextInt();
             if(type == 1){
                 cout("Enter firstName and lastName");
@@ -35,7 +37,7 @@ public class Main {
                 }
                 databaseManager.saveAuth("teacher", teacher.getTeacher_id());
                 TeacherView teacherView = new TeacherView(teacher);
-                teacherView.init();
+                teacherView.init(databaseManager);
             }
             else if(type == 2){
                 cout("Enter firstName and lastName");
@@ -54,13 +56,13 @@ public class Main {
                 }
                 databaseManager.saveAuth("student", student.getStudent_id());
                 StudentView studentView = new StudentView(student);
-                studentView.init();
+                studentView.init(databaseManager);
             }
-            else{
-                cout("Enter username");
+            else if (type == 3){
+                cout("username");
                 String name = (String)cin.next();
 
-                cout("Enter password:");
+                cout("password:");
                 String password = (String)cin.next();
 
                 Admin admin = databaseManager.getAdmin(name, password);
@@ -69,9 +71,46 @@ public class Main {
                     cout("Not Valid username/password");
                     System.exit(0);
                 }
+                cout("success/log-in");
                 databaseManager.saveAuth("admin", admin.getAdmin_id());
                 AdminView adminView = new AdminView(admin);
-                adminView.init();
+                adminView.init(databaseManager);
+            }
+            else if(type == 4){
+                cout("firstName and lastName");
+                String firstName = (String)cin.next();
+                String lastName = (String)cin.next();
+
+                cout("password:");
+                String password = (String)cin.next();
+
+                Teacher teacher = databaseManager.getTeacher(firstName, lastName, password);
+                if(teacher == null){
+                    cout("Not Valid username/password");
+                    System.exit(0);
+                }
+                cout("success/log-in");
+                databaseManager.saveAuth("teacher", teacher.getTeacher_id());
+                TeacherView teacherView = new TeacherView(teacher);
+                teacherView.init(databaseManager);
+            }
+            else{
+                cout("firstName and lastName");
+                String firstName = (String)cin.next();
+                String lastName = (String)cin.next();
+
+                cout("password:");
+                String password = (String)cin.next();
+
+                Student student = databaseManager.getStudent(firstName, lastName, password);
+                if(student == null){
+                    cout("Not Valid username/password");
+                    System.exit(0);
+                }
+                cout("success/log-in");
+                databaseManager.saveAuth("student", student.getStudent_id());
+                StudentView studentView = new StudentView(student);
+                studentView.init(databaseManager);
             }
         }
         else{
@@ -82,7 +121,7 @@ public class Main {
                     System.exit(0);
                 }
                 TeacherView teacherView = new TeacherView(teacher);
-                teacherView.init();
+                teacherView.init(databaseManager);
             }
             else if(auth.getWho().equals("student")){
                 Student student = databaseManager.getStudentById(auth.getWho_id());
@@ -91,7 +130,7 @@ public class Main {
                     System.exit(0);
                 }
                 StudentView studentView = new StudentView(student);
-                studentView.init();
+                studentView.init(databaseManager);
             }
             else{
                 Admin admin = databaseManager.getAdminById(auth.getId());
@@ -100,7 +139,7 @@ public class Main {
                     System.exit(0);
                 }
                 AdminView adminView = new AdminView(admin);
-                adminView.init();
+                adminView.init(databaseManager);
             }
         }
     }

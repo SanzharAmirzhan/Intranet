@@ -21,7 +21,7 @@ public class Teacher {
     private String password;
 
     //-------- Relationships --------
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "teacher")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "teacher")
     private Set<Subject> subjectSet = new HashSet<Subject>(0);
 
     //-------- Getters/Setters --------

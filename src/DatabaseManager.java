@@ -71,6 +71,24 @@ public class DatabaseManager {
         }
     }
 
+    public void deleteAuth(){
+        Session session = getSession();
+        try{
+            Auth auth = null;
+            session.beginTransaction();
+            auth = (Auth) session.get(Auth.class, 1);
+            session.delete(auth);
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: deleteAuth");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+    }
+
     //------- Create Objects -------
     public int createStudent(String firstName, String lastName, String password){
         Session session = getSession();
@@ -197,6 +215,80 @@ public class DatabaseManager {
         return student;
     }
 
+    public Set<Transcript> getTranscriptForStudent(Student student){
+        Session session = getSession();
+        Set<Transcript> transcriptSet =  null;
+        try{
+            session.beginTransaction();
+            transcriptSet = student.getTranscriptSet();
+            session.getTransaction().commit();
+
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getTranscriptForStudent");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return transcriptSet;
+    }
+
+    public Set<Attendance> getAttendanceForStudent(Student student){
+        Session session = getSession();
+        Set<Attendance> attendanceSet =  null;
+        try{
+            session.beginTransaction();
+            attendanceSet = student.getAttendanceSet();
+            session.getTransaction().commit();
+
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getAttendanceForStudent");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return attendanceSet;
+    }
+
+    public void addSubjectForStudent(Student student, Subject subject){
+        Session session = getSession();
+        try{
+            student.getSubjectSet().add(subject);
+
+            session.beginTransaction();
+            session.update(student);
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: addSubjectForStudent");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    public Set<Subject> getStudentSubjects(Student student){
+        Session session = getSession();
+        Set<Subject> subjectSet = null;
+        try{
+            session.beginTransaction();
+            subjectSet = student.getSubjectSet();
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getStudentSubjects");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return subjectSet;
+    }
+
 
     //------- Teacher Object -------
     public Teacher getTeacher(String firstName, String lastName, String password){
@@ -287,5 +379,49 @@ public class DatabaseManager {
             session.close();
         }
         return admin;
+    }
+
+    //------- For All --------
+    public List<Subject> getAllSubjects(){
+        Session session = getSession();
+        List<Subject> subjectSet = null;
+        try{
+            session.beginTransaction();
+
+            subjectSet = session.createCriteria(models.Subject.class).list();
+
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getAllSubjects");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return subjectSet;
+    }
+
+    public Subject getSubjectWithName(String title){
+        Session session = getSession();
+        Subject subject = null;
+        try{
+            List<Subject> subjectList = null;
+            session.beginTransaction();
+            subjectList = session.createCriteria(models.Subject.class).add(Restrictions.eq("title", title)).list();
+            session.getTransaction().commit();
+
+            if(!subjectList.isEmpty()){
+                subject = subjectList.get(0);
+            }
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getSubjectWithName");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return subject;
     }
 }

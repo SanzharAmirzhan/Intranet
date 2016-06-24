@@ -31,19 +31,27 @@ public class Student {
     }
 
     //-------- Relationships --------
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "TRANSCRIPT_ID")
-    private Transcript transcript;
-
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "students_subjects", joinColumns = @JoinColumn(name = "STUDENT_ID"),
             inverseJoinColumns = @JoinColumn(name = "SUBJECT_ID"))
     private Set<Subject> subjectSet = new HashSet<Subject>(0);
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "student")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "student")
     private Set<Attendance> attendanceSet = new HashSet<Attendance>(0);
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "student")
+    private Set<Transcript> transcriptSet = new HashSet<Transcript>(0);
+
+
     //-------- Getters/Setters --------
+    public Set<Transcript> getTranscriptSet() {
+        return transcriptSet;
+    }
+
+    public void setTranscriptSet(Set<Transcript> transcriptSet) {
+        this.transcriptSet = transcriptSet;
+    }
+
     public Set<Attendance> getAttendanceSet() {
         return attendanceSet;
     }
@@ -66,14 +74,6 @@ public class Student {
 
     public void setSubjectSet(Set<Subject> subjectSet) {
         this.subjectSet = subjectSet;
-    }
-
-    public Transcript getTranscript() {
-        return transcript;
-    }
-
-    public void setTranscript(Transcript transcript) {
-        this.transcript = transcript;
     }
 
     public int getStudent_id() {

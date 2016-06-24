@@ -16,14 +16,13 @@ public class Attendance {
     @Column(name = "WAS", nullable = false)
     private boolean was;
 
-
     //-------- Relationships --------
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinTable(name = "subjects_attendance", joinColumns = @JoinColumn(name = "ATTENDANCE_ID"),
             inverseJoinColumns = @JoinColumn(name = "SUBJECT_ID"))
     private Subject subject;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "student_attendance", joinColumns = @JoinColumn(name = "ATTENDANCE_ID"),
             inverseJoinColumns = @JoinColumn(name = "STUDENT_ID"))
     private Student student;

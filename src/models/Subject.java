@@ -34,22 +34,33 @@ public class Subject {
 
 
     //-------- Relationships --------
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "SCHEDULE_ID")
     private Schedule schedule;
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "subjectSet")
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "subjectSet")
     private Set<Student> studentSet = new HashSet<Student>(0);
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "subjects_teacher", joinColumns = @JoinColumn(name = "SUBJECT_ID"),
                                     inverseJoinColumns = @JoinColumn(name = "TEACHER_ID"))
     private Teacher teacher;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "subject")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "subject")
     private Set<Attendance> attendanceSet = new HashSet<Attendance>(0);
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "subject")
+    private Set<Transcript> transcriptSet = new HashSet<Transcript>(0);
+
     //-------- Getters/Setters --------
+    public Set<Transcript> getTranscriptSet() {
+        return transcriptSet;
+    }
+
+    public void setTranscriptSet(Set<Transcript> transcriptSet) {
+        this.transcriptSet = transcriptSet;
+    }
+
     public Set<Attendance> getAttendanceSet() {
         return attendanceSet;
     }

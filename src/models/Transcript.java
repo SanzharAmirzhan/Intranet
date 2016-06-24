@@ -13,13 +13,20 @@ public class Transcript {
     @Column(name = "GRADE", nullable = false)
     private String grade;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "STUDENT_ID")
+    //------ Relationships
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "student_transcript", joinColumns = @JoinColumn(name = "TRANSCRIPT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "STUDENT_ID"))
     private Student student;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "SUBJECT_ID")
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "subject_transcript", joinColumns = @JoinColumn(name = "TRANSCRIPT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "SUBJECT_ID"))
     private Subject subject;
+
+
+    //------ Getters/Setters -------
 
     public Subject getSubject() {
         return subject;
