@@ -4,25 +4,16 @@
     <list default="true" id="a4a51f62-4bcb-480c-816c-ea8ea7cf2d56" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/AdminView.class" afterPath="$PROJECT_DIR$/out/production/Intranet/AdminView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/DatabaseManager.class" afterPath="$PROJECT_DIR$/out/production/Intranet/DatabaseManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/Main.class" afterPath="$PROJECT_DIR$/out/production/Intranet/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/StudentView.class" afterPath="$PROJECT_DIR$/out/production/Intranet/StudentView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/TeacherView.class" afterPath="$PROJECT_DIR$/out/production/Intranet/TeacherView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/models/Attendance.class" afterPath="$PROJECT_DIR$/out/production/Intranet/models/Attendance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/models/Student.class" afterPath="$PROJECT_DIR$/out/production/Intranet/models/Student.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/models/Subject.class" afterPath="$PROJECT_DIR$/out/production/Intranet/models/Subject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/models/Teacher.class" afterPath="$PROJECT_DIR$/out/production/Intranet/models/Teacher.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/models/Transcript.class" afterPath="$PROJECT_DIR$/out/production/Intranet/models/Transcript.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/models/Admin.class" afterPath="$PROJECT_DIR$/out/production/Intranet/models/Admin.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Intranet/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/production/Intranet/hibernate.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdminView.java" afterPath="$PROJECT_DIR$/src/AdminView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DatabaseManager.java" afterPath="$PROJECT_DIR$/src/DatabaseManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StudentView.java" afterPath="$PROJECT_DIR$/src/StudentView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TeacherView.java" afterPath="$PROJECT_DIR$/src/TeacherView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/Attendance.java" afterPath="$PROJECT_DIR$/src/models/Attendance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/Student.java" afterPath="$PROJECT_DIR$/src/models/Student.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/Subject.java" afterPath="$PROJECT_DIR$/src/models/Subject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/Teacher.java" afterPath="$PROJECT_DIR$/src/models/Teacher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/Transcript.java" afterPath="$PROJECT_DIR$/src/models/Transcript.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/Admin.java" afterPath="$PROJECT_DIR$/src/models/Admin.java" />
     </list>
     <ignored path="Intranet.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,17 +43,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StudentView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/StudentView.java">
+      <file leaf-file-name="TeacherView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/TeacherView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
+            <state relative-caret-position="192">
+              <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#showTranscript#0;class#StudentView#0" expanded="false" />
-                <element signature="method#showAttendance#0;class#StudentView#0" expanded="false" />
-                <element signature="method#addSubject#0;class#StudentView#0" expanded="false" />
-                <element signature="method#showMySubjects#0;class#StudentView#0" expanded="false" />
+                <element signature="method#showSubjects#0;class#TeacherView#0" expanded="false" />
+                <element signature="e#2221#2230#0" expanded="true" />
+                <element signature="method#showScheduleForSubject#0;class#TeacherView#0" expanded="false" />
+                <element signature="method#setGradeForStudent#0;class#TeacherView#0" expanded="false" />
+                <element signature="e#4465#4474#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,19 +83,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/models/Schedule.java" />
-        <option value="$PROJECT_DIR$/src/models/Admin.java" />
         <option value="$PROJECT_DIR$/src/models/Auth.java" />
-        <option value="$PROJECT_DIR$/src/TeacherView.java" />
-        <option value="$PROJECT_DIR$/src/AdminView.java" />
-        <option value="$PROJECT_DIR$/src/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/models/Attendance.java" />
         <option value="$PROJECT_DIR$/src/models/Student.java" />
         <option value="$PROJECT_DIR$/src/models/Subject.java" />
         <option value="$PROJECT_DIR$/src/models/Teacher.java" />
         <option value="$PROJECT_DIR$/src/models/Transcript.java" />
+        <option value="$PROJECT_DIR$/src/models/Admin.java" />
         <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/AdminView.java" />
         <option value="$PROJECT_DIR$/src/StudentView.java" />
+        <option value="$PROJECT_DIR$/src/DatabaseManager.java" />
+        <option value="$PROJECT_DIR$/src/TeacherView.java" />
       </list>
     </option>
   </component>
@@ -114,7 +106,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
+    <option name="x" value="4" />
+    <option name="width" value="1276" />
     <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -206,7 +199,6 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -641,15 +633,15 @@
       <updated>1466687806028</updated>
       <workItem from="1466687808734" duration="10528000" />
       <workItem from="1466739169920" duration="13440000" />
-      <workItem from="1466755236138" duration="4774000" />
+      <workItem from="1466755236138" duration="17116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28742000" />
+    <option name="totallyTimeSpent" value="41084000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="4" y="0" width="1276" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -658,15 +650,15 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.28984374" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.70119524" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8472776" sideWeight="0.71015626" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23046875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23119122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2171875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -686,7 +678,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -708,75 +700,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TeacherView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AdminView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="273" column="59" selection-start-line="273" selection-start-column="59" selection-end-line="273" selection-end-column="59" />
-          <folding>
-            <element signature="initializer##0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#DatabaseManager#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getSession#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#checkAuth#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#saveAuth#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#deleteAuth#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#createStudent#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#createTeacher#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#createAdmin#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#createSubject#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getStudent#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getStudentById#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getTranscriptForStudent#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getAttendanceForStudent#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#addSubjectForStudent#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getStudentSubjects#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getTeacher#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getTeacherById#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getAdmin#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getAdminById#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getAllSubjects#0;class#DatabaseManager#0" expanded="false" />
-            <element signature="method#getSubjectWithName#0;class#DatabaseManager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1665">
           <caret line="111" column="57" selection-start-line="111" selection-start-column="57" selection-end-line="111" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding>
-            <element signature="method#Admin#0;class#Admin#0" expanded="false" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -803,16 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Schedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="47" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="47" />
-          <folding>
-            <element signature="method#Schedule#0;class#Schedule#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Student.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
@@ -828,9 +747,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Schedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="method#Schedule#0;class#Schedule#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#626#635#0" expanded="true" />
+            <element signature="method#Teacher#0;class#Teacher#0" expanded="false" />
+            <element signature="method#Teacher#1;class#Teacher#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Subject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
+        <state relative-caret-position="495">
           <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
           <folding>
             <element signature="method#Subject#0;class#Subject#0" expanded="false" />
@@ -842,11 +784,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="method#Admin#0;class#Admin#0" expanded="false" />
+            <element signature="method#Admin#1;class#Admin#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AdminView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="150" column="31" selection-start-line="150" selection-start-column="31" selection-end-line="150" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addSubject#0;class#AdminView#0" expanded="false" />
+            <element signature="method#addSchedule#0;class#AdminView#0" expanded="false" />
+            <element signature="method#changeSchedule#0;class#AdminView#0" expanded="false" />
+            <element signature="method#showScheduleForSubject#0;class#AdminView#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StudentView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="100" column="40" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#showTranscript#0;class#StudentView#0" expanded="false" />
+            <element signature="method#showAttendance#0;class#StudentView#0" expanded="false" />
+            <element signature="method#showMySubjects#0;class#StudentView#0" expanded="false" />
+            <element signature="method#showScheduleForSubject#0;class#StudentView#0" expanded="false" />
+            <element signature="method#showWholeSchedule#0;class#StudentView#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -860,29 +842,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Teacher.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_74.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        <state relative-caret-position="173">
+          <caret line="652" column="0" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="646" column="79" selection-start-line="646" selection-start-column="79" selection-end-line="646" selection-end-column="79" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#626#635#0" expanded="true" />
-            <element signature="method#Teacher#0;class#Teacher#0" expanded="false" />
-            <element signature="method#Teacher#1;class#Teacher#0" expanded="false" />
+            <element signature="initializer##0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#DatabaseManager#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getSession#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#checkAuth#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#saveAuth#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#deleteAuth#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#createStudent#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#createTeacher#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#createAdmin#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#createSubject#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getStudent#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getStudentById#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getTranscriptsForStudent#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getAttendanceForStudent#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#addSubjectForStudent#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getStudentSubjects#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getTeacher#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getTeacherById#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getTeacherSubjects#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getStudentsBySubject#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#addAttendanceForStudent#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#setGradeForStudentSubject#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#changeGradeForStudentSubject#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getAdmin#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getAdminById#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#addScheduleForSubject#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#changeScheduleForSubject#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getAllTeachers#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#setTeacherForSubject#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getTeacherForSubject#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getAllSubjects#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getSubjectWithName#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getScheduleForSubject#0;class#DatabaseManager#0" expanded="false" />
+            <element signature="method#getTranscriptForStudent#0;class#DatabaseManager#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StudentView.java">
+    <entry file="file://$PROJECT_DIR$/src/TeacherView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
+        <state relative-caret-position="192">
+          <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#showTranscript#0;class#StudentView#0" expanded="false" />
-            <element signature="method#showAttendance#0;class#StudentView#0" expanded="false" />
-            <element signature="method#addSubject#0;class#StudentView#0" expanded="false" />
-            <element signature="method#showMySubjects#0;class#StudentView#0" expanded="false" />
+            <element signature="method#showSubjects#0;class#TeacherView#0" expanded="false" />
+            <element signature="e#2221#2230#0" expanded="true" />
+            <element signature="method#showScheduleForSubject#0;class#TeacherView#0" expanded="false" />
+            <element signature="method#setGradeForStudent#0;class#TeacherView#0" expanded="false" />
+            <element signature="e#4465#4474#0" expanded="true" />
           </folding>
         </state>
       </provider>

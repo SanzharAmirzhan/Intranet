@@ -161,7 +161,7 @@ public class DatabaseManager {
             session.getTransaction().commit();
         }
         catch (HibernateException e){
-            System.out.println("---ERROR: insert student");
+            System.out.println("---ERROR: insert subject");
             e.printStackTrace();
         }
         finally {
@@ -215,7 +215,7 @@ public class DatabaseManager {
         return student;
     }
 
-    public Set<Transcript> getTranscriptForStudent(Student student){
+    public Set<Transcript> getTranscriptsForStudent(Student student){
         Session session = getSession();
         Set<Transcript> transcriptSet =  null;
         try{
@@ -225,7 +225,7 @@ public class DatabaseManager {
 
         }
         catch (HibernateException e){
-            System.out.println("---ERROR: getTranscriptForStudent");
+            System.out.println("---ERROR: getTranscriptsForStudent");
             e.printStackTrace();
         }
         finally {
@@ -257,9 +257,11 @@ public class DatabaseManager {
         Session session = getSession();
         try{
             student.getSubjectSet().add(subject);
+            subject.getStudentSet().add(student);
 
             session.beginTransaction();
-            session.update(student);
+            session.saveOrUpdate(student);
+            session.saveOrUpdate(subject);
             session.getTransaction().commit();
         }
         catch (HibernateException e){
@@ -335,6 +337,111 @@ public class DatabaseManager {
         return teacher;
     }
 
+    public Set<Subject> getTeacherSubjects(Teacher teacher){
+        Session session = getSession();
+        Set<Subject> subjectSet = null;
+        try{
+            session.beginTransaction();
+            subjectSet = teacher.getSubjectSet();
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getTeacherSubject");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return subjectSet;
+    }
+
+    public Set<Student> getStudentsBySubject(Subject subject){
+        Session session = getSession();
+        Set<Student> studentSet = null;
+        try{
+            session.beginTransaction();
+            studentSet = subject.getStudentSet();
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getStudentsBySubject");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return studentSet;
+    }
+
+    public void addAttendanceForStudent(Student student, Subject subject, String date, boolean was){
+        Session session = getSession();
+        try{
+            Attendance attendance = new Attendance(date, was);
+            attendance.setStudent(student);
+            attendance.setSubject(subject);
+
+            student.getAttendanceSet().add(attendance);
+            subject.getAttendanceSet().add(attendance);
+
+            session.beginTransaction();
+            session.saveOrUpdate(attendance);
+            session.update(student);
+            session.update(subject);
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: addAttendanceForStudent");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    public int setGradeForStudentSubject(Student student, Subject subject, String grade){
+        Session session = getSession();
+        int ind = -1;
+        try{
+            Transcript transcript = new Transcript(grade);
+            transcript.setStudent(student);
+            transcript.setSubject(subject);
+
+            student.getTranscriptSet().add(transcript);
+            subject.getTranscriptSet().add(transcript);
+
+            session.beginTransaction();
+            ind = (int) session.save(transcript);
+            session.update(student);
+            session.update(subject);
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: setGradeForStudentSubject");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return ind;
+    }
+
+    public void changeGradeForStudentSubject(Transcript transcript, String newGrade){
+        Session session = getSession();
+        try{
+            transcript.setGrade(newGrade);
+            session.beginTransaction();
+            session.update(transcript);
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: changeGradeForStudentSubject");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+    }
+
 
     //------- Admin Object -------
     public Admin getAdmin(String name, String password){
@@ -381,6 +488,100 @@ public class DatabaseManager {
         return admin;
     }
 
+    public int addScheduleForSubject(Subject subject, String scheduleText){
+        Session session = getSession();
+        int ind = -1;
+        try{
+            Schedule schedule = new Schedule(scheduleText);
+            schedule.setSubject(subject);
+
+            subject.setSchedule(schedule);
+
+            session.beginTransaction();
+            ind = (int) session.save(schedule);
+            session.update(subject);
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: addScheduleForSubject");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return ind;
+    }
+
+    public void changeScheduleForSubject(Schedule schedule, String newSchedule){
+        Session session = getSession();
+        try{
+            schedule.setSchedule_text(newSchedule);
+            session.beginTransaction();
+            session.update(schedule);
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: changeScheduleForStudent");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    public List<Teacher> getAllTeachers(){
+        Session session = getSession();
+        List<Teacher> teacherSet = null;
+        try{
+            session.beginTransaction();
+            teacherSet = session.createCriteria(models.Teacher.class).list();
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getAllTeachers");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return teacherSet;
+    }
+
+    public void setTeacherForSubject(Teacher teacher, Subject subject){
+        Session session = getSession();
+        try{
+            subject.setTeacher(teacher);
+            session.beginTransaction();
+            session.update(subject);
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: setTeacherForSubject");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    public Teacher getTeacherForSubject(Subject subject){
+        Session session = getSession();
+        Teacher teacher = null;
+        try{
+            session.beginTransaction();
+            teacher = subject.getTeacher();
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getTeacherForSubject");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return teacher;
+    }
+
     //------- For All --------
     public List<Subject> getAllSubjects(){
         Session session = getSession();
@@ -423,5 +624,47 @@ public class DatabaseManager {
             session.close();
         }
         return subject;
+    }
+
+    public Schedule getScheduleForSubject(Subject subject){
+        Session session = getSession();
+        Schedule schedule = null;
+        try{
+            session.beginTransaction();
+            schedule = subject.getSchedule();
+            session.getTransaction().commit();
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getScheduleForSubject");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return schedule;
+    }
+
+    public Transcript getTranscriptForStudent(Student student, Subject subject){
+        Session session = getSession();
+        Transcript transcript = null;
+        try{
+            session.beginTransaction();
+            List<Transcript> transcriptList =  session.createCriteria(models.Transcript.class)
+                    .add(Restrictions.eq("student", student))
+                    .add(Restrictions.eq("subject", subject)).list();
+            session.getTransaction().commit();
+
+            if(!transcriptList.isEmpty()){
+                transcript = transcriptList.get(0);
+            }
+        }
+        catch (HibernateException e){
+            System.out.println("---ERROR: getTranscriptForStudent");
+            e.printStackTrace();
+        }
+        finally {
+            session.close();
+        }
+        return transcript;
     }
 }

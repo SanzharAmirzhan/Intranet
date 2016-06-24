@@ -20,11 +20,13 @@ public class StudentView {
     private void load(){
         cout("Choose actions :");
         cout("1) Show Transcript");
-        cout("2) Show attendance");
+        cout("2) Show Attendance");
         cout("3) Add new Subject");
         cout("4) Show my subjects");
-        cout("5) Log-out");
-        cout("6) Exit");
+        cout("5) Show schedule for subject");
+        cout("6) Show whole schedule");
+        cout("7) Log-out");
+        cout("8) Exit");
 
         int type = cin.nextInt();
 
@@ -41,18 +43,23 @@ public class StudentView {
             showMySubjects();
         }
         else if(type == 5){
+            showScheduleForSubject();
+        }
+        else if(type == 6){
+            showWholeSchedule();
+        }
+        else if(type == 7){
             cout("Good bye!");
             this.databaseManager.deleteAuth();
             System.exit(0);
         }
-        else{
+        else if(type == 8){
             System.exit(0);
         }
-        dashLine();
     }
 
     private void showTranscript(){
-        Set<Transcript> transcriptSet = this.databaseManager.getTranscriptForStudent(this.student);
+        Set<Transcript> transcriptSet = this.databaseManager.getTranscriptsForStudent(this.student);
         cout("Transcript :");
         if (transcriptSet.size() == 0){
             cout("Is Empty.");
@@ -94,9 +101,25 @@ public class StudentView {
             String choosedSubject = (String) cin.next();
             Subject subject = this.databaseManager.getSubjectWithName(choosedSubject);
 
-            if(subject != null){
-                this.databaseManager.addSubjectForStudent(this.student, subject);
-                cout("subject added!");
+            if(subject != null) {
+
+                boolean add = true;
+
+                Set<Subject> subjectSet = this.databaseManager.getStudentSubjects(this.student);
+                for(Subject sub : subjectSet){
+                    if(sub.getSubject_id() == subject.getSubject_id()){
+                        add = false;
+                        break;
+                    }
+                }
+
+                if(add == true) {
+                    this.databaseManager.addSubjectForStudent(this.student, subject);
+                    cout("subject added!");
+                }
+                else{
+                    cout("subject added before");
+                }
             }
             else{
                 cout(choosedSubject + " subject does not exist");
@@ -119,8 +142,42 @@ public class StudentView {
         load();
     }
 
-    private void dashLine(){
-        cout("\n\n");
+    private void showScheduleForSubject(){
+        cout("Enter title of subject:");
+        String title = (String) cin.next();
+        Subject subject = this.databaseManager.getSubjectWithName(title);
+
+        if (subject == null) {
+            cout("not valid title");
+            return;
+        }
+
+        Schedule schedule = this.databaseManager.getScheduleForSubject(subject);
+
+        if(schedule != null) {
+            cout("Schedule");
+            cout(schedule.getSchedule_text());
+        }
+        else{
+            cout("Subject doesn't have schedule");
+        }
+        load();
+    }
+
+    private void showWholeSchedule(){
+        Set<Subject> subjectSet = this.databaseManager.getStudentSubjects(this.student);
+
+        if(subjectSet == null || subjectSet.isEmpty()){
+            cout("no subjects yet");
+        }
+        else {
+            cout("Whole Schedule: ");
+            for (Subject subject : subjectSet) {
+                Schedule schedule = this.databaseManager.getScheduleForSubject(subject);
+                cout(subject.getTitle() + " -- Schedule: " + schedule.getSchedule_text());
+            }
+        }
+        load();
     }
 
     // ----- Other ------
